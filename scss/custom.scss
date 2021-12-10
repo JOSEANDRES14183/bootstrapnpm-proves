@@ -16,12 +16,9 @@
 @import "../node_modules/bootstrap/scss/grid";
 
 $colors-personalitzats: (
-    $primary: violet,
-    $micolor: darkgreen
+    "primary": violet,
+    "micolor": darkgreen
 );
-
-
-
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
