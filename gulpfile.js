@@ -1,3 +1,4 @@
+const { parallel, series } = require('gulp');
 var gulp = require('gulp');
 var sass = require('gulp-sass')(require('sass'));
 
@@ -7,4 +8,9 @@ function buildStyles() {
     .pipe(gulp.dest('./dist/css'));
 };
 
-exports.build = buildStyles;
+function copy() {
+  return gulp.src('./node_modules/**/boostrap.bundle.min.js')
+    .pipe(gulp.dest('./dist/js'));
+};
+
+exports.build = series(buildStyles,copy);
